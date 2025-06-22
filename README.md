@@ -1,8 +1,8 @@
 <div align="center">
-    <img src="./assets/preview.png/" />
+    <img src="./assets/preview.png" />
     <h1>ShopPal - Shop Smarter, Shop ShopPal!</h1>
     <h3>
-        <a href="https://shoppal-ui.netlify.app/" color="white">
+        <a href="https://shoppal-sagar.netlify.app/" color="white">
         Live
         </a>
         <span> | </span>
@@ -20,9 +20,9 @@
 
 ## 🧐 Introduction <a name="introduction"></a>
 
-**ShopPal** is a full-stack e-commerce web application developed by **Sagar Kumar Sah** as a portfolio project. It offers a modern and responsive online shopping experience featuring fake product listings across categories like clothing, electronics, and home goods.
+**ShopPal** is a full-stack e-commerce web application developed by **Sagar Kumar Sah** as a portfolio project. It provides a seamless and responsive shopping experience with product listings in clothing, electronics, home goods, and more. 
 
-This project demonstrates end-to-end skills in modern frontend and backend development, authentication, CRUD operations, and deployment.
+The project demonstrates proficiency in full-stack development, including frontend UI, backend APIs, JWT-based authentication, PostgreSQL integration, and modern deployment workflows.
 
 ---
 
@@ -88,22 +88,22 @@ This project demonstrates end-to-end skills in modern frontend and backend devel
 ## 🎈 Features <a name="features"></a>
 
 - ✅ **Login/Sign Up** with JWT authentication  
-- ✅ **Product browsing** with search, filters, and categories  
-- ✅ **Rating and review** system for products  
-- ✅ **Cart** with add/remove and live quantity update  
-- ✅ **Checkout** with fake payment integration  
-- ✅ **Order history** per user  
-- ✅ **User profile** with editable info  
-- ✅ **Fully responsive** on all devices  
+- ✅ **Product browsing** with filters and search  
+- ✅ **Product reviews and ratings**  
+- ✅ **Add to cart**, remove, and view cart items  
+- ✅ **Checkout** with simulated payment  
+- ✅ **Order history** for each user  
+- ✅ **User profile management**  
+- ✅ **Mobile responsive design**  
 
 ---
 
 ## 🙏 Acknowledgements <a name="acknowledgements"></a>
 
-- 🎨 [**Looka**](https://looka.com/) - Logo Design  
-- 🎨 [**Realtime Colors**](https://www.realtimecolors.com/) - Color palette  
-- 🧩 [**IconScout**](https://iconscout.com/) - Lottie animations & vectors  
-- 🧩 [**React SVG Icons**](https://reactsvgicons.com/) - Icons used across the UI  
+- 🎨 [**Looka**](https://looka.com/) – Logo design  
+- 🎨 [**Realtime Colors**](https://www.realtimecolors.com/) – Color palette  
+- 🧩 [**IconScout**](https://iconscout.com/) – Lottie animations and SVGs  
+- 🧩 [**React SVG Icons**](https://reactsvgicons.com/) – Icons and vectors  
 
 ---
 
@@ -111,8 +111,8 @@ This project demonstrates end-to-end skills in modern frontend and backend devel
 
 Made with ❤️ by  
 **Sagar Kumar Sah**  
-📍 Araria, Bihar | 👨‍🎓 B.Tech CSE (M.M. Engineering College, Mullana)  
-🔗 [GitHub Profile](https://github.com/sagarkumarsah)
+📍 Araria, Bihar | 👨‍🎓 B.Tech CSE – M.M. Engineering College, Mullana  
+🔗 [GitHub](https://github.com/sagarkumarsah) | ✉️ sagarkumarsah@gmail.com  
 
 ---
 
