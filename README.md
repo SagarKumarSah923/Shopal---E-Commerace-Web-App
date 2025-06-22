@@ -2,7 +2,7 @@
     <img src="./assets/preview.png" />
     <h1>ShopPal - Shop Smarter, Shop ShopPal!</h1>
     <h3>
-        <a href="https://shoppal-sagar.netlify.app/" color="white">
+        <a href="https://shoppal-ui.netlify.app/" color="white">
         Live
         </a>
         <span> | </span>
