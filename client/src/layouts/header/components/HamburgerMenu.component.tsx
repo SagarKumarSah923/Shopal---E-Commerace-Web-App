@@ -68,13 +68,15 @@ export function HamburgerMenu({ isMenuOpen, onLinkClick }: HamburgerMenuProps) {
                             )}
                             <hr className="border-1 w-full border-solid border-text-950" />
                             <li className="flex w-full flex-row items-center justify-center gap-20">
-                                <Link
-                                    to="https://github.com/MaorBezalel/e-commerce-app"
+                                <a
+                                    href="https://github.com/SagarKumarSah923/ShopPal-Full-Stack-E-commerce-Web-App"
                                     className="flex flex-row items-center gap-2 rounded-md border border-solid border-text-950 p-1"
                                     onClick={() => onLinkClick((prev) => !prev)}
+                                    target="_blank"
+                                    rel="noreferrer"
                                 >
                                     <IconGithub className="size-6" />
-                                </Link>
+                                </a>
                                 <button
                                     className="flex flex-row items-center gap-2 rounded-md border border-solid border-text-950 p-1 hidden"
                                     onClick={() => onLinkClick((prev) => !prev)}

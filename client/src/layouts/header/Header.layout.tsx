@@ -148,12 +148,14 @@ export function Header() {
 
                         {/* Github */}
                         <li className="pc-sm:hidden">
-                            <Link
-                                to="https://github.com/MaorBezalel/e-commerce-app"
+                            <a
+                                href="https://github.com/SagarKumarSah923/ShopPal-Full-Stack-E-commerce-Web-App"
                                 className="flex flex-row items-center gap-2 rounded-md border border-solid border-text-950 p-1"
+                                target="_blank"
+                                rel="noreferrer"
                             >
                                 <IconGithub className="size-6" />
-                            </Link>
+                            </a>
                         </li>
                     </menu>
                 </aside>
