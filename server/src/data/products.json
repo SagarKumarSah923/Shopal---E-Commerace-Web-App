@@ -1,0 +1,7 @@
+[
+    { "id": "1", "name": "Red Hoodie", "category": "hoodie", "price": 1200 },
+    { "id": "2", "name": "Blue Hoodie", "category": "hoodie", "price": 1100 },
+    { "id": "3", "name": "Black Hoodie", "category": "hoodie", "price": 1000 },
+    { "id": "4", "name": "Green T-shirt", "category": "tshirt", "price": 800 },
+    { "id": "5", "name": "Yellow Hoodie", "category": "hoodie", "price": 1300 }
+]

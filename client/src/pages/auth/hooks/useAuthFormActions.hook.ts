@@ -15,11 +15,6 @@ export type UseAuthFormActionsReturn<TFormValue extends 'login' | 'signup'> = {
     setError: React.Dispatch<React.SetStateAction<ResponseError | null>>;
 };
 
-/**
- * A hook that returns the form submit and error handling functions, loading state, and error state for the auth form
- *
- * @returns {UseAuthFormActionsReturn} An object containing the form submit and error handling functions, loading state, and error state
- */
 export function useAuthFormActions<TFormType extends 'login' | 'signup'>(): UseAuthFormActionsReturn<TFormType> {
     const { setAuth, setRememberMe } = useAuth();
     const { userApi } = useApi();
@@ -28,9 +23,9 @@ export function useAuthFormActions<TFormType extends 'login' | 'signup'>(): UseA
     const navigate = useNavigate();
 
     const handleLogin = async (data: LoginFormInputs) => {
-        setIsLoading(true); // start loading
-
+        setIsLoading(true);
         const isEmail = data.emailOrUsername.includes('@');
+
         const loginDetails: LoginRequest = isEmail
             ? { email: data.emailOrUsername, password: data.password }
             : { username: data.emailOrUsername, password: data.password };
@@ -39,18 +34,25 @@ export function useAuthFormActions<TFormType extends 'login' | 'signup'>(): UseA
             const loginResult = await userApi.login(loginDetails);
             processLoginResult(loginResult, data.rememberMe);
             navigate(`/profile/${(loginResult as LoginResponse).user.user_id}`);
-        } catch (error) {
-            console.error(error);
-            if (error instanceof AxiosError) {
-                setError(error.response?.data as ResponseError);
+        } catch (err) {
+            console.error(err);
+            if (err instanceof AxiosError) {
+                setError(err.response?.data as ResponseError);
             }
         } finally {
-            setIsLoading(false); // stop loading
+            setIsLoading(false);
         }
     };
 
     const handleSignup = async (data: SignupFormInputs) => {
-        setIsLoading(true); // start loading
+        setIsLoading(true);
+
+        // Validate password: exactly 5 characters
+        if (data.password.length !== 5) {
+            setError({ message: 'Password must be exactly 5 characters long.' });
+            setIsLoading(false);
+            return;
+        }
 
         const signupDetails: SignupRequest = {
             email: data.email,
@@ -65,41 +67,42 @@ export function useAuthFormActions<TFormType extends 'login' | 'signup'>(): UseA
             const signupResult = await userApi.signup(signupDetails);
             processSignupResult(signupResult);
             navigate(`/profile/${(signupResult as SignupResponse).user.user_id}`);
-        } catch (error) {
-            console.error(error);
-            if (error instanceof AxiosError) {
-                setError(error.response?.data as ResponseError);
+        } catch (err) {
+            console.error(err);
+            if (err instanceof AxiosError) {
+                setError(err.response?.data as ResponseError);
             }
         } finally {
-            setIsLoading(false); // stop loading
+            setIsLoading(false);
         }
     };
 
-    const processLoginResult = (result: Awaited<ReturnType<typeof userApi.login>> | undefined, rememberMe: boolean) => {
+    const processLoginResult = (
+        result: Awaited<ReturnType<typeof userApi.login>> | undefined,
+        rememberMe: boolean
+    ) => {
         if (result && 'accessToken' in result) {
             setAuth(result);
             setRememberMe(rememberMe);
         } else {
-            console.error('An undefined error occurred during login:', result);
             setError(result as ResponseError);
         }
     };
 
-    const processSignupResult = (result: Awaited<ReturnType<typeof userApi.signup>> | undefined) => {
+    const processSignupResult = (
+        result: Awaited<ReturnType<typeof userApi.signup>> | undefined
+    ) => {
         if (result && 'accessToken' in result) {
             setAuth(result);
         } else {
-            console.error('An undefined error occurred during signup:', result);
             setError(result as ResponseError);
         }
     };
 
     const onSubmit: SubmitHandler<FormInputs<TFormType>> = async (data) => {
         if ('emailOrUsername' in data && data.emailOrUsername) {
-            console.log('Login form data:', data);
             await handleLogin(data as LoginFormInputs);
         } else {
-            console.log('Signup form data:', data);
             await handleSignup(data as SignupFormInputs);
         }
     };
